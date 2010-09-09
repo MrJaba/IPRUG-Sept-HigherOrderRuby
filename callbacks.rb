@@ -23,7 +23,8 @@ class DirectoryWalker
     end    
   end
   
-end
+end 
+
 
 callbacks = {
   :directory => lambda{|dir| puts dir },

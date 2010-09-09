@@ -27,7 +27,7 @@ end
 #   puts scale_3.call(x)
 # end
 
-#Curried Map function
+#Curried Map function - bit pointless in ruby!
 
 #before
 p (1..10).to_a.map {|x| x * 2}

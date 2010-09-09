@@ -3,24 +3,20 @@
 
 require 'node'
 
-def upfrom(start)
-  Node.new( start, lambda{ upfrom(start+1) } )
+#AFTER
+def upfrom_lazy(start)
+  Node.new( start, lambda{ upfrom_lazy(start+1) } )
 end
 
-def upfrom_list(start)
-  Node.new( start, upfrom_list(start+1) )
+#BEFORE
+def upfrom_recursive(start)
+  Node.new( start, upfrom_recursive(start+1) )
 end
 
-#b = upfrom_list(1) #StackLevelTooDeep
-a = upfrom(1)
+#b = upfrom_recursive(1) #StackLevelTooDeep
+a = upfrom_lazy(1)
 
 #Debug statement to iterate over the list
-# while( a ) do
-#   puts a.head
-#   a = a.tail
-# end
-
-#Replaced with this
 while( a ) do
   puts a.drop
 end
